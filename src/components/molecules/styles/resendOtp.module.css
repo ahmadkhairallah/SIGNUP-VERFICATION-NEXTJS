@@ -1,0 +1,13 @@
+.resendButton {
+    background: none;
+    border: none;
+    color: var(--primary-color);
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .resendButton:disabled {
+    color: #aaa;
+    cursor: not-allowed;
+  }
+  
