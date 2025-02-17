@@ -1,17 +1,25 @@
 "use client";
-import React from "react";
+import React, { Suspense, useState } from "react";
 import { useSearchParams } from "next/navigation";
-import EmailVerification from "@/components/organisms/EmailVerification";
 
-const EmailVerificationPage = () => {
+const EmailVerificationContent = () => {
   const searchParams = useSearchParams();
   const email = searchParams.get("email") || "";
 
-  if (!email) {
-    return <p>البريد الإلكتروني غير متوفر. الرجاء العودة إلى صفحة التسجيل.</p>;
-  }
+  return (
+    <div>
+      <h1>تحقق من بريدك الإلكتروني</h1>
+      <p>تم إرسال كود التحقق إلى {email}. الرجاء إدخاله أدناه:</p>
+    </div>
+  );
+};
 
-  return <EmailVerification email={email} />;
+const EmailVerificationPage = () => {
+  return (
+    <Suspense fallback={<p>Loading...</p>}>
+      <EmailVerificationContent />
+    </Suspense>
+  );
 };
 
 export default EmailVerificationPage;
