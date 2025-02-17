@@ -1,7 +1,8 @@
+import { otpStore } from "@/services/otpStore";
 import { NextResponse } from "next/server";
 
 // استخدام نفس `otpStore` لتخزين `OTP`
-import { otpStore } from "../register/route"; 
+// import { otpStore } from "../register/route"; 
 
 export async function POST(req: Request) {
   try {

@@ -1,6 +1,8 @@
 import { NextResponse } from "next/server";
 import { sendOTPEmail } from "@/services/emailService";
-import { otpStore } from "../register/route"; // استخدم نفس المخزن المؤقت
+import { otpStore } from "@/services/otpStore";
+// import { otpStore } from "../register/route"; 
+// استخدم نفس المخزن المؤقت
 
 export async function POST(req: Request) {
   try {

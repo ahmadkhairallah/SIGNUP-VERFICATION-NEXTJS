@@ -3,7 +3,7 @@ import { z } from "zod";
 import { sendOTPEmail } from "@/services/emailService";
 
 // مخزن مؤقت لـ OTP
-export const otpStore = new Map<string, string>();
+const otpStore = new Map<string, string>();
 
 const registerSchema = z.object({
   name: z.string().min(3, "الاسم يجب أن يكون على الأقل 3 أحرف"),
